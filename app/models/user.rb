@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :artist_name, presence: true
+  has_one_attached :image
+  has_many :events
 end
