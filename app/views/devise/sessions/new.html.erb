@@ -1,0 +1,52 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Evesic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div class="d-flex">
+            <%# <button type="button" class="btn btn-outline-light me-2">Login</button> %>
+            <li><%= link_to 'Sign-up', new_user_registration_path, class: "btn btn-outline-light me-2" %></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<body class="footer-low">
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      Log in
+    </h1>
+  </div>
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+  <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Email(必須)</label>
+      </div>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"メールアドレス" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Password(必須)</label>
+      </div>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワード(6文字以上)" %>
+    </div>
+  <div class='login-btn'>
+    <%= f.submit "Log in" ,class:"login-red-btn" %>
+  </div>
+</div>
+
+<% end %>
+
+</body>
+<%= render "shared/second-footer"%>
+
