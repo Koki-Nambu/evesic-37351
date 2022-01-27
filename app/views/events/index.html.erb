@@ -250,6 +250,12 @@
       </div>
     </div>
   </div>
+  <% if user_signed_in? %>
+    <%= link_to(new_event_path, class: 'purchase-btn') do %>
+      <span class='event-btn-text'>Post Event</span>
+        <%= image_tag 'スピーカーアイコン.png' , size: '250x40' ,class: "purchase-btn-icon" %>
+    <% end %>
+  <% end %>
     <!-- FOOTER -->
   <%= render "shared/footer" %>
   </body>
