@@ -1,0 +1,84 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Evesic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div class="d-flex">
+            <%# <button type="button" class="btn btn-outline-light me-2">Login</button> %>
+            <li><%= link_to 'Login', new_user_session_path, class: "btn btn-outline-light me-2" %></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<body>
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        Sign up
+      </h1>
+    </div>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">ニックネーム(必須)</label>
+      </div>
+      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"ニックネーム", maxlength:"40", autofocus: true %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">アーティスト名(必須)</label>
+      </div>
+      <%= f.text_area :artist_name, class:"input-default", placeholder:"アーティスト名" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Email(必須)</label>
+      </div>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"メールアドレス" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Password(必須)</label>
+      </div>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数(6文字以上)" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Password(確認)</label>
+      </div>
+      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">YouTube URL(任意)</label>
+      </div>
+      <%= f.text_area :url, class:"input-default", id:"url", placeholder:"YouTube URL" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">ジャンル(任意)</label>
+      </div>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"input-default3"}) %>
+    </div>
+    <div class="form-group2">
+      <div class='form-text-wrap'>
+        <label class="form-text">Profile(任意)</label>
+      </div>
+      <%= f.text_area :profile, class:"input-default2", id:"nickname", placeholder:"プロフィール", maxlength:"800" %>
+    </div>
+    <div class='register-btn'>
+      <%= f.submit "Sign up" ,class:"register-red-btn" %>
+    </div>
+  </div>
+<% end %>
+</body>
+<%= render "shared/footer" %>
