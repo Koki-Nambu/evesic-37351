@@ -1,0 +1,126 @@
+<div class="items-sell-contents">
+  <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Evesic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div class="d-flex">
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">イベント情報を入力</h2>
+    <%= form_with model: @event, local: true do |f| %>
+
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+
+    <%# 商品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        イベントフライヤー
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックして画像をアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /商品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        イベント名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"イベント名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+    <div class='form-text-wrap'>
+      <label class="weight-bold-text">開催日
+      <span class="indispensable">必須</span></label>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :date,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2022,
+                    end_year: (Time.now.year + 3),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+    <div class="weight-bold-text">
+        開催場所
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :place, class:"items-text", id:"item-name", placeholder:"場所（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          イベント概要
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :content, class:"items-text2", id:"item-info", placeholder:"イベントの概要（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>入場料<br>(¥100〜30,000)</span>
+        <a class="question" href="#">?</a>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>入場料</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :charge, class:"price-input", id:"item-price", placeholder:"例）300" %>
+        </div>
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 注意書き %>
+    <div class="caution">
+      <p class="sentence">
+        <a href="#"></a>
+        <a href="#"></a>
+        
+      </p>
+      <p class="sentence">
+        
+        <a href="#"></a>
+        
+      </p>
+      <p class="sentence">
+        
+        <a href="#"></a>
+        
+      </p>
+    </div>
+    <%# /注意書き %>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+</div>
+<%= render "shared/second-footer"%>
