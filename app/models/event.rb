@@ -6,7 +6,7 @@ class Event < ApplicationRecord
                       presence: { message: "Can't be blank" }
   end
 
-  validates :title, :date, :place, :content, presence: true
+  validates :title, :date, :place, :content, :image, presence: true
   has_one_attached :image
   belongs_to :user
 
