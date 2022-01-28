@@ -128,9 +128,9 @@
     </div>
   </div>
   <% if user_signed_in? %>
-    <%= link_to(new_event_path, class: 'purchase-btn') do %>
+    <%= link_to new_event_path, class: 'purchase-btn' do %>
       <span class='event-btn-text'>Post Event</span>
-        <%= image_tag 'スピーカーアイコン.png' , size: '250x40' ,class: "purchase-btn-icon" %>
+        <%= image_tag 'icon_speaker.png', size: '250x40' ,class: "purchase-btn-icon" %>
     <% end %>
   <% end %>
     <!-- FOOTER -->
