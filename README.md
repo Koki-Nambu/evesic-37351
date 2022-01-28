@@ -37,6 +37,7 @@ has_many :likes
 | charge              | integer    | null: false                    |
 | content             | text       | null: false                    |
 | user                | references | foreign_key: true              |
+| impressions_count   | integer    | default: 0                     |
 
 ### Association
 belongs_to :user
