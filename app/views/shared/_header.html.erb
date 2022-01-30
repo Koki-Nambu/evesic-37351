@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Evesic</a>
+      <a class="navbar-brand" href="/">Evesic</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,7 +21,7 @@
           <div class="d-flex">
             <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light me-2" %></li>
             <%# <button type="button" class="btn btn-warning">Sign-up</button> %>
-            <li><%= link_to current_user.nickname, '#', class: "btn btn-danger" %></li>
+            <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "btn btn-danger" %></li>
           <% else %>
           <div class="d-flex">
             <li><%= link_to 'Login', new_user_session_path, class: "btn btn-outline-light me-2" %></li>
