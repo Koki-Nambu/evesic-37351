@@ -48,39 +48,42 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
+    <% @hot_event.each do |hot| %>
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        
+        <%= image_tag hot.image, class: "bd-placeholder-img" if hot.image.attached? %> 
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1><%= hot.title%></h1>
+            <p><%= hot.content%></p>
+            <%= link_to 'more', event_path(hot.id), class: "btn btn-lg btn-primary" %>
           </div>
         </div>
       </div>
+      <% end %>
+      <% @hot_event2.each do |hot2| %>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+        <%= image_tag hot2.image, class: "bd-placeholder-img" if hot2.image.attached? %> 
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1><%= hot2.title%></h1>
+            <p><%= hot2.content%></p>
+            <%= link_to 'more', event_path(hot2.id), class: "btn btn-lg btn-primary" %>
           </div>
         </div>
       </div>
+      <% end %>
+      <% @hot_event3.each do |hot3| %>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+        <%= image_tag hot3.image, class: "bd-placeholder-img" if hot3.image.attached? %> 
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1><%= hot3.title%></h1>
+            <p><%= hot3.content%></p>
+            <%= link_to 'more', event_path(hot3.id), class: "btn btn-lg btn-primary" %>
           </div>
         </div>
       </div>
+      <% end %>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
