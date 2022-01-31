@@ -24,9 +24,9 @@
             <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "btn btn-danger" %></li>
           <% else %>
           <div class="d-flex">
-            <li><%= link_to 'Login', new_user_session_path, class: "btn btn-outline-light me-2" %></li>
+            <%= link_to 'Login', new_user_session_path, class: "btn btn-outline-light me-2" %>
             <%# <button type="button" class="btn btn-warning">Sign-up</button> %>
-            <li><%= link_to 'Sign-up', new_user_registration_path, class: "btn btn-warning" %></li>
+            <%= link_to 'Sign-up', new_user_registration_path, class: "btn btn-warning" %>
           <% end %>
           </div>
         </div>
