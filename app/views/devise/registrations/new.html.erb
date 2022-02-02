@@ -26,7 +26,6 @@
     </div>
 
       <%= render 'shared/error_messages', model: f.object %>
-
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">ニックネーム(必須)</label>
@@ -63,6 +62,7 @@
       </div>
       <%= f.text_area :url, class:"input-default", id:"url", placeholder:"YouTube URL" %>
     </div>
+    
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">ジャンル(任意)</label>
@@ -75,10 +75,18 @@
       </div>
       <%= f.text_area :profile, class:"input-default2", id:"nickname", placeholder:"プロフィール", maxlength:"800" %>
     </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">アーティスト写真(任意)</label>
+        <div class="click-upload">
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+    </div>
     <div class='register-btn'>
       <%= f.submit "Sign up" ,class:"register-red-btn" %>
     </div>
   </div>
 <% end %>
 </body>
-<%= render "shared/footer" %>
+<%= render "shared/footer"%>
