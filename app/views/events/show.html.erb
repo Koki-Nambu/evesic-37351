@@ -7,7 +7,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading"><%= @event.title%><br></h2><h4><span class="text-muted"><%= @event.place%></span></h4><h5><span class="text-muted"><%=@event.date%></span></h5>
+        <h2 class="featurette-heading"><%= @event.title%><br></h2><h4><span class="text-muted"><%= @event.place%></span></h4><h5><span class="text-muted"><%=@event.date%></span></h5><h5><span class="text-muted"><%="￥#{@event.charge}"%></span></h5>
         <p class="lead"><%= @event.content%></p><br><br>
       </div>
       <div class="col-md-5">
