@@ -23,7 +23,6 @@
     <%= render 'shared/error_messages', model: f.object %>
 
 
-    <%# 商品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         イベントフライヤー
@@ -36,8 +35,6 @@
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-    <%# /商品画像 %>
-    <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
         イベント名
@@ -75,8 +72,6 @@
         <%= f.text_area :content, class:"items-text2", id:"item-info", placeholder:"イベントの概要（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
-    <%# 販売価格 %>
     <div class="sell-price">
       <div class="weight-bold-text question-text">
         <span>入場料<br>(¥100〜30,000)</span>
@@ -93,9 +88,6 @@
         </div>
       </div>
     </div>
-    <%# /販売価格 %>
-
-    <%# 注意書き %>
     <div class="caution">
       <p class="sentence">
         <a href="#"></a>
@@ -113,13 +105,10 @@
         
       </p>
     </div>
-    <%# /注意書き %>
-    <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "投稿する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-    <%# /下部ボタン %>
   </div>
   <% end %>
 </div>
