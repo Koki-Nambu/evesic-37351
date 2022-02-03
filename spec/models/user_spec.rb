@@ -11,11 +11,6 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
 
-      it 'profileが空でも保存できる' do
-        @user.profile = ''
-        expect(@user).to be_valid
-      end
-
       it 'urlが空でも保存できる' do
         @user.url = ''
         expect(@user).to be_valid
@@ -37,6 +32,12 @@ RSpec.describe User, type: :model do
         @user.artist_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Artist name can't be blank")
+      end
+
+      it '画像が空では保存できない' do
+        @user.image = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Image can't be blank")
       end
 
       it 'emailが空では保存できない' do
@@ -102,6 +103,12 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = 'abcdef'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid")
+      end
+
+      it 'プロフィールが空では保存できない' do
+        @user.profile = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Profile can't be blank")
       end
     end
   end
