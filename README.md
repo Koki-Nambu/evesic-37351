@@ -1,6 +1,92 @@
+# アプリケーション名  
+EVESIC
+
+# アプリケーション概要  
+アーティストがイベントを主催し、まだ見ぬアーティストをブッキングする事でアーティストもお客さんも新規ファン、アーティストを獲得することができる。
+
+# URL  
+https://evesic-37351.herokuapp.com/
+
+# テスト用アカウント  
+・BASIC認証ID : test  
+・BASIC認証 : 1111  
+・メールアドレス : test@test.com  
+・パスワード : 11111k  
+
+# 利用方法  
+1. トップページ(一覧ページ)からユーザー登録を行う。  
+2. トップページ(一覧ページ)に表示されている「Post Event」からイベントの投稿を行う。  
+3. トップページ(一覧ページ)に表示されているイベント詳細ページへ遷移し参加したいイベントにコメントするor投稿者をフォローする。  
+4. お互いにフォローし合う相手にのみマイページにメールアドレスが表示される。  
 
 
-## usersテーブル
+# アプリケーションを作成した背景	
+アーティストがイベントをする際は知り合いのアーティストに出演してもらう事が多いが、
+それを続けるとイベント出演者もお客さんもマンネリ化してきてしまい、新たなアーティスト、新たなファンに出会う機会が少なくなってしまう。  
+そんな悩みを解決するためにこのアプリケーションを開発した。
+
+# 洗い出した要件	
+https://docs.google.com/spreadsheets/d/1K5snxME0m08IJvvBbpU9jBwi7pHznLGKHR5fNVUq-ks/edit?usp=sharing
+
+# 実装した機能についての画像やGIFおよびその説明
+実装した機能について、それぞれどのような特徴があるのかを列挙する形で記載。画像はGyazoで、GIFはGyazoGIFで撮影すること。
+
+
+
+
+
+
+# 実装予定の機能	
+メールアドレスで連絡を取れるが、アプリケーション上で全て完結できることが目標なので、DM機能を実装する予定。  
+またイベントのお気に入り機能なども実装予定。
+
+# データベース設計	
+https://gyazo.com/b5aa2e386a8b1f3fc8edfed98c6cd695
+
+# 画面遷移図
+https://gyazo.com/8ffbe36ee5c413a2dcd38a0b9bc0e728
+
+# 開発環境	
+・Bootstrap v5.0.2  
+・ruby 2.6.5p114  
+・Heroku  
+・Rspec-rails v4.0.0  
+・VScode  
+・Github プロジェクトボード  
+
+# ローカルでの動作方法
+% git clone https://github.com/Koki-Nambu/evesic-37351  
+% cd evesic-37351  
+% bundle install  
+% yarn install  
+
+# 工夫したポイント
+トップページ(一覧ページ)の上部にHOU EVENTとして投稿されたイベントの中からアクセス数上位3つを表示するように実装。  
+impressionistというGemを追加し、イベント詳細ページへ遷移した回数を計測する。その際自主的にPV数を伸ばす事が出来ないように、今回はip_addressにてPV数をカウントした。カウントデータをもとにデータを取得し、アクセス数の多い順に並べ替え出力した。  
+またビューファイルには基本的にBootstrapを使用し、シンプルで見やすいを心がけてデザインした。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# usersテーブル
 
 | Column                 | Type       | Options                        |
 | -----------------------| -----------| -------------------------------|
@@ -10,11 +96,7 @@
 | encrypted_password     | string     | null: false                    |
 | profile                | text       | null: false                    |
 | url                    | string     |                                |
-| genre_id1              | integer    |                                |
-| genre_id2              | integer    |                                |
-| genre_id3              | integer    |                                |
-| genre_id4              | integer    |                                |
-| genre_id5              | integer    |                                |
+| genre_id               | integer    |                                |
 
 ### Association
 has_many :events
@@ -27,7 +109,7 @@ has_many :likes
 
 
 
-## eventsテーブル
+# eventsテーブル
 
 | Column              | Type       | Options                        |
 | --------------------| -----------| -------------------------------|
@@ -49,7 +131,7 @@ has_many :event_tag_relations
 
 
 
-## commentsテーブル
+# commentsテーブル
 
 | Column              | Type       | Options                        |
 | --------------------| -----------| -------------------------------|
@@ -66,7 +148,7 @@ belongs_to :user
 
 
 
-## FollowRelationsテーブル
+# FollowRelationsテーブル
 
 | Column              | Type       | Options                        |
 | --------------------| -----------| -------------------------------|
@@ -79,7 +161,7 @@ belongs_to :follow, class_name: 'User'
 
 
 
-## likesテーブル
+# likesテーブル
 | Column              | Type       | Options                        |
 | --------------------| -----------| -------------------------------|
 | event_id            | references | foreign_key: true              |
@@ -88,3 +170,7 @@ belongs_to :follow, class_name: 'User'
 ### Association
 belongs_to :user
 belongs_to :event
+
+
+
+
