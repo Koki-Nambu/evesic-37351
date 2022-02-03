@@ -40,6 +40,14 @@
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
+        <label class="form-text">アーティスト写真(必須)</label>
+        <div class="click-upload">
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
         <label class="form-text">Email(必須)</label>
       </div>
       <%= f.email_field :email, class:"input-default", id:"email", placeholder:"メールアドレス" %>
@@ -71,17 +79,9 @@
     </div>
     <div class="form-group2">
       <div class='form-text-wrap'>
-        <label class="form-text">Profile(任意)</label>
+        <label class="form-text">Profile(必須)</label>
       </div>
       <%= f.text_area :profile, class:"input-default2", id:"nickname", placeholder:"プロフィール", maxlength:"800" %>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">アーティスト写真(任意)</label>
-        <div class="click-upload">
-          <%= f.file_field :image, id:"item-image" %>
-        </div>
-      </div>
     </div>
     <div class='register-btn'>
       <%= f.submit "Sign up" ,class:"register-red-btn" %>
