@@ -12,11 +12,23 @@
 
 .artist_name {
   position: absolute;
-  top: 42%;
+  top: 33%;
   left: 10%;
   text-shadow: 1px 2px 3px #808080;
   font-size: 70px;
   color: #ffffff;
+}
+
+.follow_btn {
+  width: 100px;
+  height: 35px;
+  font-size: 18px;
+  border: 1px solid white;
+  border-radius: 45px;
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-top: 3px;
+  margin-left: 100px;
 }
 
 
@@ -68,3 +80,4 @@
   color: #2b2b2b;
   margin: 20px;
 }
+
