@@ -12,7 +12,7 @@
 
 .artist_name {
   position: absolute;
-  top: 33%;
+  top: 20%;
   left: 10%;
   text-shadow: 1px 2px 3px #808080;
   font-size: 70px;
@@ -20,23 +20,40 @@
 }
 
 .follow_btn {
+  position: absolute;
   width: 100px;
   height: 35px;
-  font-size: 18px;
+  font-size: 15px;
   border: 1px solid white;
   border-radius: 45px;
-  margin-top: 10px;
-  padding-left: 15px;
+  padding-left: 10px;
   padding-top: 3px;
-  margin-left: 100px;
+  margin-top: 15px;
+  margin-left: 120px;
+  font-weight:  bold;
+}
+
+.unfollow_btn{
+  position: absolute;
+  width: 125px;
+  height: 35px;
+  font-size: 14px;
+  border: 1px solid #2b2b2b;
+  border-radius: 45px;
+  padding-left: 5px;
+  margin-left: 110px;
+  margin-top: 15px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  font-weight:  bold;
 }
 
 
 
+
 .content_space {
-  width: 100%;
+  width: 87%;
   height: 400px;
-  padding: 10px;
   display: flex;
 }
 
@@ -61,6 +78,7 @@
   margin-left: 10px;
   border-radius: 10px;
   overflow-x: scroll;
+  font-weight:  bold;
   
 }
 

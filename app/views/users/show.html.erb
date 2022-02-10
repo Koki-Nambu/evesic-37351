@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+<script src="follow_create.js"></script>
  <body>
     
 <main>
@@ -7,7 +8,10 @@
     <div class="text-image">
       <%= image_tag @user.image, class:"text-image" if @user.image.attached? %> 
       <div class='artist_name'><%= @user.artist_name %>
-      <div class='follow_btn'>フォロー</div>
+      <% if user_signed_in? && current_user.id != @user.id %>
+        <div id="follow-ajax">
+          <%= render "shared/follow", user: @user %>
+      <% end %>
       </div>
     </div>
     <div class= "content_space">
