@@ -1,0 +1,19 @@
+<% if current_user.liked_by?(event.id) %>
+  <div class='like_space'>
+  <div class='like_count'>
+    <%= event.likes.count %>
+  </div>
+    <%= link_to destroy_like_path(event.id), method: :DELETE, remote: true do %>
+      <%= image_tag 'unlike.png', size: '22x22' ,class: "like_btn" %>
+    <% end %>
+  </div>
+<% else %>
+  <div class='like_space'>
+  <div class='like_count'>
+    <%= event.likes.count %>
+  </div>
+    <%= link_to create_like_path(event.id), method: :POST, remote: true do %>
+     <%= image_tag 'like.png', size: '22x22' ,class: "like_btn" %>
+    <% end %>
+  </div>
+<% end %>

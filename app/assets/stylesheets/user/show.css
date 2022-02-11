@@ -19,6 +19,15 @@
   color: #ffffff;
 }
 
+.no_url_artist_name {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  text-shadow: 1px 2px 3px #808080;
+  font-size: 70px;
+  color: #ffffff;
+}
+
 .follow_btn {
   position: absolute;
   width: 100px;
@@ -52,7 +61,7 @@
 
 
 .content_space {
-  width: 87%;
+  width: 1115px;
   height: 400px;
   display: flex;
 }
@@ -87,7 +96,6 @@
   height: 90%;
   background-color: #f5f5f5;
   border: 1px solid rgb(116, 113, 113);
-  margin-left: 10px;
   border-radius: 10px;
   overflow-x: scroll;
   

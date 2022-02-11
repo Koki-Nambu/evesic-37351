@@ -25,6 +25,10 @@
         <% end %>
         </div>
       </div>
+    <% else %>
+    <div id='like'>
+      <%= render "shared/like", event: @event %>
+    </div>
     <% end %>
     
   <footer class="container">
