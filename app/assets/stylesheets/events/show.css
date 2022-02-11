@@ -1,0 +1,19 @@
+.eventuser_btn {
+  text-decoration: none;
+  color: rgb(99, 99, 99);
+}
+
+.like_space{
+  display: flex;
+  margin-bottom: 15px;
+  margin-left: 6px;
+}
+
+.like_btn{
+  margin: 3px;
+  margin-left: 7px;
+}
+
+.like_count{
+  font-size: 17px;
+}
