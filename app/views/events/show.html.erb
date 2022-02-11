@@ -1,39 +1,38 @@
 <%= render "shared/header" %>
 <main>
   <div class="container marketing">
-    <div class="row">
-    </div>
-    <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading"><%= @event.title%><br></h2><h4><span class="text-muted"><%= @event.place%></span></h4><h5><span class="text-muted"><%=@event.date%></span></h5><h5><span class="text-muted"><%="￥#{@event.charge}"%></span></h5>
-        <p class="lead"><%= @event.content%></p><br><br>
+        <div class='event_title'><h2 class="featurette-heading"><%= @event.title%><br></h2></div>
+        <div class='event_place'><h4><span class="text-muted"><%= @event.place%></span></h4></div>
+        <div class='event_date'><h5><span class="text-muted"><%=@event.date%></span></h5></div>
+        <div class='event_charge'><h5><span class="text-muted"><%="￥#{@event.charge}"%></span></h5></div>
+        <p class="lead"><%= @event.content%></p><br>
+        <% if user_signed_in? && current_user.id == @event.user.id%>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <%= link_to edit_event_path(@event.id), class: "btn btn-sm btn-outline-secondary" do %>
+          <%= image_tag 'edit-button.png', size: '25x25'%>
+          <% end %>
+          <%= link_to event_path, method: :delete, class: "btn btn-sm btn-outline-secondary" do %>
+          <%= image_tag 'dust_box.png', size: '25x25' %>
+          <% end %>
+        </div>
+      </div>
+    <% elsif user_signed_in? && current_user.id != @event.user.id%>
+      <div id='like'>
+        <%= render "shared/like", event: @event %>
+      </div>
+    <% end %>
       </div>
       <div class="col-md-5">
+        <div class='space'></div>
         <%= image_tag @event.image, class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"  if @event.image.attached? %> 
         <h6>投稿者:<%= link_to @event.user.nickname, "/users/#{@event.user.id}", class: "eventuser_btn" %></h6>
       </div>
     </div>
-    <% if user_signed_in? && current_user.id == @event.user.id%>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-        <%= link_to edit_event_path(@event.id), class: "btn btn-sm btn-outline-secondary" do %>
-        <%= image_tag 'edit-button.png', size: '25x25'%>
-        <% end %>
-        <%= link_to event_path, method: :delete, class: "btn btn-sm btn-outline-secondary" do %>
-        <%= image_tag 'dust_box.png', size: '25x25' %>
-        <% end %>
-        </div>
-      </div>
-    <% else %>
-    <div id='like'>
-      <%= render "shared/like", event: @event %>
-    </div>
-    <% end %>
-    
-  <footer class="container">
-    <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-  </footer>
+  </div>
+  
 </main>
 
 

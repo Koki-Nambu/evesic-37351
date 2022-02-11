@@ -3,6 +3,23 @@
   color: rgb(99, 99, 99);
 }
 
+.event_title{
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.event_place{
+  margin-bottom: 20px;
+}
+
+.event_date{
+  margin-bottom: 20px;
+}
+
+.event_charge{
+  margin-bottom: 20px;
+}
+
 .like_space{
   display: flex;
   margin-bottom: 15px;
@@ -16,4 +33,14 @@
 
 .like_count{
   font-size: 17px;
+}
+
+.space {
+  width: 452px;
+  height: 105px;
+}
+
+.event_show_footer{
+  position: absolute;
+  bottom: 0;
 }
