@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy]
 
   def show
-    @events = @user.events
+    @events = @user.events.order("created_at DESC")
     @user.url = @user.url.last(11)
   end
 
