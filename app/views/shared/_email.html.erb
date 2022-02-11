@@ -1,0 +1,3 @@
+<% if user_signed_in? && current_user.id != user.id && current_user.following?(user) && user.following?(current_user) %>
+  <div class='email'>Email:<%= user.email%></div>
+<% end %>

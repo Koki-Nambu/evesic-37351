@@ -7,12 +7,13 @@
   <div class="container py-4">
     <div class="text-image">
       <%= image_tag @user.image, class:"text-image" if @user.image.attached? %> 
-      <div class='artist_name'><%= @user.artist_name %>
-      <% if user_signed_in? && current_user.id != @user.id %>
-        <div id="follow-ajax">
-          <%= render "shared/follow", user: @user %>
-        </div>
-      <% end %>
+      <div class='artist_name'>
+        <%= @user.artist_name %>
+        <% if user_signed_in? && current_user.id != @user.id %>
+          <div id="follow-ajax">
+            <%= render "shared/follow", user: @user %>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class= "content_space">
@@ -21,6 +22,9 @@
       </div>
       <div class='profile'>
         <div class='artist_profile'><p>プロフィール</p><%= @user.profile %></div>
+        <div id='email'>
+          <%= render "shared/email", user: @user %>
+        </div>
       </div>
     </div>
   </div>
