@@ -10,6 +10,7 @@ class EventsController < ApplicationController
     @hot_event3 = @hot.limit(1).offset(2)
   end
 
+
   def new
     @event = Event.new
   end
