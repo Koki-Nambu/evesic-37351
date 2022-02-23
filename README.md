@@ -32,17 +32,17 @@ https://docs.google.com/spreadsheets/d/1K5snxME0m08IJvvBbpU9jBwi7pHznLGKHR5fNVUq
 # 実装した機能についての画像やGIFおよびその説明
 
 ・イベント一覧画面に閲覧数の多い上位3つの投稿を表示させる  
-![イベント一覧画面に閲覧数の多い上位3つの投稿を表示させる](https://gyazo.com/3d13c75794941ac0c3eecf4c721bcc14.gif)
+![閲覧数上位3つ](https://gyazo.com/3d13c75794941ac0c3eecf4c721bcc14.gif)
 
 ・イベントのいいね&いいね解除機能  
 ![イベントのいいね機能](https://gyazo.com/c8459b02cc1f3e3eb14be0a585735936.gif)
 
 ・ユーザーのフォロー&フォロー解除機能  
-![ユーザーのフォロー機能](https://gyazo.com/e40773c08afe1fb62a0ff11591395297.gif)
+![フォロー機能](https://gyazo.com/e40773c08afe1fb62a0ff11591395297.gif)
 
 
 ・動画の埋め込み表示  
-![動画の埋め込み表示](https://gyazo.com/927da27dffc79fa1423eaf9b82b28840.gif)
+![動画の埋め込み](https://gyazo.com/927da27dffc79fa1423eaf9b82b28840.gif)
 
 
 
