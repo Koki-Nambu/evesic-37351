@@ -32,7 +32,7 @@ https://docs.google.com/spreadsheets/d/1K5snxME0m08IJvvBbpU9jBwi7pHznLGKHR5fNVUq
 # 実装した機能についての画像やGIFおよびその説明
 
 ・イベント一覧画面に閲覧数の多い上位3つの投稿を表示させる(自動&手動)  
-![閲覧数上位3つ](hhttps://gyazo.com/e916d6dcd14fa04b3232a78ba404b25d.gif)
+![閲覧数上位3つ](https://gyazo.com/cac669ac7a987b65e31914ba35d21be2.gif)
 
 ・イベントのいいね&いいね解除機能  
 ![イベントのいいね機能](https://gyazo.com/c8459b02cc1f3e3eb14be0a585735936.gif)
