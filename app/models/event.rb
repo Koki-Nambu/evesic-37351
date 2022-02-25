@@ -11,5 +11,13 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :likes
 
+  def self.search(search)
+    if search != ""
+      Event.where('content LIKE(?)', "%#{search}%")
+    else
+      Event.all
+    end
+  end
+
   
 end
