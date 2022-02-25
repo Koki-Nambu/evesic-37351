@@ -112,4 +112,8 @@
   margin: 20px;
 }
 
-
+.search_box{
+  width: 100%;
+  height: 100px;
+  background-color:rgb(245, 245, 245)
+}
