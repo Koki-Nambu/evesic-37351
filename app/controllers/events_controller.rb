@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.search(params[:keyword])
+    @events = Event.search(params[:keyword]).order("created_at DESC")
   end
 
 
