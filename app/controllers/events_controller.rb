@@ -26,6 +26,8 @@ class EventsController < ApplicationController
 
   def show
     impressionist(@event, nil, unique: [:ip_address])
+    @comment = Comment.new
+    @comments = @event.comments.includes(:user)
   end
 
   def edit
