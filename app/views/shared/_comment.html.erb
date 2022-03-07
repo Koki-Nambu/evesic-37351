@@ -1,0 +1,18 @@
+<% if @comments.present? %>
+  <div class="comments">
+    <% comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: "eventuser_btn"%></strong>
+        <%= comment.text %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+<div class='comment-form'>
+  <% if user_signed_in? %>
+    <%= form_with(model: [@event, @comment], local: true, class: "show-form") do |form| %>
+      <%= form.text_area :text, placeholder: "コメントする", class: "comment-text" %>
+      <%= form.submit "SEND", class: "comment-submit" %>
+    <% end %>
+  <% end %>
+</div>

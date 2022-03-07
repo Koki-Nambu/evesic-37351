@@ -30,23 +30,10 @@
         <%= image_tag @event.image, class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"  if @event.image.attached? %> 
         <h6>投稿者:<%= link_to @event.user.nickname, "/users/#{@event.user.id}", class: "eventuser_btn" %></h6>
       </div>
-      <% if @comments.present? %>
-      <div class="comments">
-        <h4>コメント一覧</h4>
-        <% @comments.each do |comment| %>
-          <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></strong>
-            <%= comment.text %>
-          </p>
-        <% end %>
-      <% end %>
-        <% if user_signed_in? %>
-          <%= form_with(model: [@event, @comment], local: true, class: "d-flex") do |form| %>
-            <%= form.text_area :text, placeholder: "コメントする", class: "form-control me-2" %>
-            <%= form.submit "SEND", class: "btn btn-outline-success" %>
-          <% end %>
-        <% end %>
-      </div>
+      
+        <div id="comment">
+          <%= render "shared/comment", comments: @comments %>
+        </div>
     </div>
   </div>
   

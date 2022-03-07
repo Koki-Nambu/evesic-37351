@@ -44,3 +44,27 @@
   position: absolute;
   bottom: 0;
 }
+
+.comments{
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.show-form{
+  display: flex;
+  margin-top: 15px;
+}
+
+.comment-text{
+  height: 35px;
+  margin-right: 5px;
+  
+}
+
+.comment-submit{
+  height: 35px;
+  padding-left: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
